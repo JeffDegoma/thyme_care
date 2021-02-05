@@ -18,7 +18,16 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
 
+const Wrapper = styled.div`
+    display: flex;
+    height: 30%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+`
+
 const Step2 = () => {
+    
 
     const {register, handleSubmit, errors, setError} = useForm({
         mode: 'onBlur',
@@ -28,7 +37,10 @@ const Step2 = () => {
         <>
         <Home></Home>
             <Right>
-            <div><h1>Step 2</h1></div>
+            <Wrapper>
+                <h1>Thank you!</h1>
+                <a href="https://thymecare.com">Home</a>
+            </Wrapper>
             </Right>
         </>
     )

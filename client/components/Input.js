@@ -6,10 +6,10 @@ import styled from 'styled-components'
 const InputField = styled(TextField)`
     width: 100%;
     .MuiInput-underline::after {
-      border-bottom: 1px solid ${props => props.theme.tertiary.color};
+      border-bottom: 1px solid ${props => props.theme.primary.color};
     }
     .MuiFormLabel-root.Mui-focused {
-      color: ${props => props.theme.tertiary.color};
+      color: ${props => props.theme.primary.color};
     }
 `
 
@@ -21,9 +21,9 @@ const Input = forwardRef(({children, ...props}, ref) => {
           </Grid>
           <Grid style={{width:'100%'}} item >
             <InputField 
-                        InputProps={props.inputProps}
-                        inputRef={ref}
-                        {...props}
+              InputProps={props.inputProps}
+              inputRef={ref}
+              {...props}
             />
           </Grid>
         </Grid>

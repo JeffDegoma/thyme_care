@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
     }
    
     html, body {
-        font-family: 'Comfortaa';
+        font-family: 'Vulf-Sans';
         a {
             text-decoration: none;
         }
@@ -37,13 +37,12 @@ export const mediaQueries = (key) => {
 export const theme = {
 
     primary : {
-        color: '#84A4A4', //green
-        buttonColor: '#FFDB5A',
+        color: '#803A62', //purple
         buttonFontSize: '18px'
     },
     
     secondary: {
-        color: '#EDFAFC', //light green
+        color: '#F2E7D1', //tan
         
     },
     tertiary: {

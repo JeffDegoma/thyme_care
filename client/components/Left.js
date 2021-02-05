@@ -17,7 +17,7 @@ const LeftContent = styled.div`
         height: 72%;
     }
 
-    h1 {
+    h2 {
         color: #F7CBBF;
         font-size: 36px;
         line-height: 2.9rem;
@@ -36,7 +36,7 @@ const Left = () => {
     return (
         <LeftContent>
             <img src={health} alt=""/>
-            <div className="headline"><h1>Cancer can be complicated. That’s why we’re here.</h1></div>
+            <div className="headline"><h2>Cancer can be complicated. That’s why we’re here.</h2></div>
         </LeftContent>
     )
 }

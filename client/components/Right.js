@@ -24,59 +24,59 @@ const RightContent = styled.div`
         flex-direction: column;
         align-items: center;
         color: white;
-        height: 40vh;
+        height: 12rem;
         justify-content: space-evenly;
         background: ${props => props.theme.secondary.color};
         // padding: 0 10% 0 10%;
-        // ${mediaQueries('mobileL')`
-        //     padding: 0;
-        // `}
+        ${mediaQueries('mobileL')`
+            // height: 70vh;
+
+        `}
 
 
         h1 {
-            color: ${props => props.theme.tertiary.color};
+            color: ${props => props.theme.primary.color};
             font-size: ${props => props.theme.default.h1};
             font-weight: 300;
             ${mediaQueries('mobileL')`
-                font-size: 44px;
+                font-size: 54px;
             `}
         }
     
         h3 {
-            color: ${props => props.theme.tertiary.color};
+            color: ${props => props.theme.primary.color};
             font-size: ${props => props.theme.default.h3};
             font-weight: 200;
             ${mediaQueries('mobileL')`
                 font-size: 20px;
             `}
         }
-        p, a {
-            color: #454545;
-        }
-        button {
-            background: #D7E8F4;
-            font-size: 14px;
-            border-radius: 30px;
-        }
+        // p, a {
+        //     color: #454545;
+        // }
+        // button {
+        //     ${mediaQueries('mobileL')`
+        //         width: 10rem;
+        //         font-size: 10px;
+        //     `}
+            
+        //     background: #D7E8F4;
+        //     font-size: 14px;
+        //     border-radius: 30px;
+        // }
 
-        .alt-signup {
-            position: relative;
-            img {
-                width: 7%;
-                top: 29%;
-                position: absolute;
-                left: 5%;
-            }
-        }
+        // .alt-signup {
+        //     position: relative;
+        //     img {
+        //         width: 7%;
+        //         top: 29%;
+        //         position: absolute;
+        //         left: 5%;
+        //     }
+        // }
     
 `
 
-const Bottom = styled.div`
-    flex: 1;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-`
 
 const or = '__________' + '\xa0\xa0\xa0\ or \xa0\xa0\xa0\xa0' + '__________';
 
@@ -85,18 +85,16 @@ const Right = ({children}) => {
 
         <RightContent>
             <Top>
-                <h1>LiveFree Health</h1>
+                <h1>Thyme Care</h1>
                 <h3>Let's Create your Account</h3>
-                <div className="alt-signup">
+                {/* <div className="alt-signup">
                 <img src={altSignup} alt=""/>
                 <Button width="large" height="large"><a href="">Sign up with Google</a></Button>
                 </div>            
-                <p>{or}</p>
+                <p>{or}</p> */}
             </Top>
             {children}
-            <Bottom>
-                    <a href="">Already have an account?</a>
-            </Bottom>
+          
         </RightContent>
     )
 }

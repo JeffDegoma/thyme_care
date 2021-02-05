@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Button = styled.button`
 
-    --props-variant-primary-background-color:  ${props => props.theme.primary.buttonColor};
+    --props-variant-primary-background-color:  ${props => props.theme.primary.color};
     --props-variant-default-background-color: #454545;
     --props-width-large: 14rem;
     --props-width-default: 5%;
@@ -40,10 +40,11 @@ const Button = styled.button`
     };
     }
     :hover {
-        background: white;
-        border: 3px solid ${props => props.theme.secondary.color};
-        transition:  .1s ease-in;
-        -webkit-transition:  .1s ease-in;
+        background: ${props => props.theme.secondary.color};
+        color: ${props => props.theme.primary.color};
+        border: 3px solid ${props => props.theme.primary.color};
+        transition:  .25s ease-in-out;
+        -webkit-transition:  .25s ease-in-out;
     }
 
     border-radius: 10px;
@@ -53,8 +54,8 @@ const Button = styled.button`
     pointer;
     font-size: 18px; //default
     text-transform: uppercase;
-    transition:  .1s ease-in;
-    -webkit-transition:  .1s ease-in;
+    transition:  .25s ease-in-out;
+    -webkit-transition:  .25s ease-in-out;
 `
 
 

@@ -18,18 +18,18 @@ import LockIcon from '@material-ui/icons/Lock';
 const FormContent = styled.form`
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin: 0 auto;
     align-content: center;
     height: 54vh;
     justify-content: flex-start;
     width: 58%;
-    ${mediaQueries('mobileM')`
-        height: 50vh;
+    margin-top: 3rem;
+    ${mediaQueries('mobileL')`
+        height: 100%;
         width: 80%;
     `}
     button {
         width: 20rem;
-        background: ${props => props.theme.tertiary.color};
         ${mediaQueries('mobileM')`
             height: 4rem;
             width: 20rem;
@@ -45,9 +45,7 @@ const FormContent = styled.form`
             margin: 2rem auto 1rem;
         `}
 
-        :hover {
-            background: ${props => props.theme.primary.color};
-        }
+     
         margin: auto;
         height: 14%;
         border-radius: 30px;
@@ -55,9 +53,16 @@ const FormContent = styled.form`
         font-size: 26px;
         font-weight: bold;
     }
+   
+`
+
+const Bottom = styled.div`
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
  
-
 const Form = ({children, ...props}) => {
     const {} = useForm({
         mode: 'blur'
@@ -67,28 +72,10 @@ const Form = ({children, ...props}) => {
         <>
             <FormContent {...props}>
                 {children}
-                {/* <Input label="Name">
-                    <AccountCircle/>
-                </Input>
-                <Input label="Email"
-                       type="email"
-                >
-                    <EmailIcon/>
-                </Input>
-                <Input label="Password"
-                       id="filled-password-input"
-                       type="password"
-                       inputProps = {{ //pass as inputProps
-                        endAdornment: (
-                          <InputAdornment position="end">
-                              <Visibility style={{cursor: 'pointer'}}/>
-                        </InputAdornment>
-                        ),
-                      }}
-                >
-                    <LockIcon/>
-                </Input>
-                <Button className="create-account">Create Account</Button> */}
+                <Button variant="primary" className="create-account">Create Account</Button>
+                <Bottom>
+                    <a href="">Already have an account?</a>
+                </Bottom>
             </FormContent>
         </>
     )
