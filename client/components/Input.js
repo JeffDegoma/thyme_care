@@ -8,6 +8,9 @@ const InputField = styled(TextField)`
     .MuiInput-underline::after {
       border-bottom: 1px solid ${props => props.theme.primary.color};
     }
+    .MuiFormHelperText-root{
+      color: red;
+    }
     .MuiFormLabel-root.Mui-focused {
       color: ${props => props.theme.primary.color};
     }
@@ -15,7 +18,7 @@ const InputField = styled(TextField)`
 
 const Input = forwardRef(({children, ...props}, ref) => {
     return (
-        <Grid container spacing={1} alignItems="flex-end" style={{flexWrap: 'nowrap', marginBottom: '9%'}}>
+        <Grid container spacing={1} alignItems="flex-end" style={{flexWrap: 'nowrap', marginBottom: '4%'}}>
           <Grid item>
           {children}
           </Grid>
