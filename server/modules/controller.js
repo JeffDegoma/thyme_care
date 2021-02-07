@@ -1,7 +1,9 @@
 import dotenv from 'dotenv'
 import AWS_cognito from 'amazon-cognito-identity-js'
+import validator from 'express-validator'
 
 dotenv.config()
+const {validationResult} = validator
 
 const poolData = {
     UserPoolId: process.env.userPoolId,
@@ -11,8 +13,9 @@ const poolData = {
 const userPool = new AWS_cognito.CognitoUserPool(poolData)
 
 export async function signUp(req, res) {
+    const err = validationResult(req)
     const {fullName, email, password} = req.body
-
+    req.session['server-errors'] = err.array()
     const user = {
         fullName,
         email,
@@ -29,13 +32,15 @@ export async function signUp(req, res) {
     userPool.signUp(email, password, [emailAttribute], null, async(err, data) => {
         try {
             if(err) {
-                console.log(err)
+                req.session['server-errors'].push(err)
+                res.json(req.session) //send session and errors to front end
+            } else {
+                res.json(data)
+
             }
-           res.json(data)  
         } catch (err){
             console.error("AWS errors", err)
         }
     })
-
 
 }

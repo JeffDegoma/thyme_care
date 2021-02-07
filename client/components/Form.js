@@ -21,9 +21,9 @@ const FormContent = styled.form`
     margin: 0 auto;
     align-content: center;
     height: 54vh;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     width: 58%;
-    margin-top: 3rem;
+    margin-top: 1rem;
     ${mediaQueries('mobileL')`
         height: 100%;
         width: 80%;
@@ -46,7 +46,7 @@ const FormContent = styled.form`
         `}
 
      
-        margin: auto;
+        margin: 0 auto;
         height: 14%;
         border-radius: 30px;
         color: ${props => props.theme.secondary.color};
@@ -54,13 +54,6 @@ const FormContent = styled.form`
         font-weight: bold;
     }
    
-`
-
-const Bottom = styled.div`
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 `
  
 const Form = ({children, ...props}) => {
@@ -73,9 +66,6 @@ const Form = ({children, ...props}) => {
             <FormContent {...props}>
                 {children}
                 <Button variant="primary" className="create-account">Create Account</Button>
-                <Bottom>
-                    <a href="">Already have an account?</a>
-                </Bottom>
             </FormContent>
         </>
     )
