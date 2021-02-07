@@ -33,14 +33,14 @@ export async function signUp(req, res) {
         try {
             if(err) {
                 req.session['server-errors'].push(err)
-                res.json(req.session) //send session and errors to front
+                res.json(req.session) //send session and errors to front end
             } else {
-                res.json(data)  
+                res.json(data)
+
             }
         } catch (err){
             console.error("AWS errors", err)
         }
     })
-
 
 }

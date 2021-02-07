@@ -89,7 +89,6 @@ const Step1 = () => {
         resolver: yupResolver(schema)
     })
 
-
     
     //pass into handleSubmit
     //data is user input
@@ -98,10 +97,13 @@ const Step1 = () => {
         .then(res => {
             if(res.data['server-errors']){
                 res.data['server-errors'].forEach(error => {
-                   console.log(error.message)
+                    setError('email', {message: error.message})
+                    console.log(error)
                 })
-            }
-            history.push('/step2') //go to next step
+            }  else {
+                //go to next step
+                history.push('/step2')
+            }    
         })
     }
     return (
